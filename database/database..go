@@ -8,16 +8,18 @@ import (
 	"gorm.io/gorm"
 )
 
+var mysqlDB *gorm.DB
+
 func Open() error {
 	dsn, err := config.LoadMySQLConfig()
 	if err != nil {
 		return fmt.Errorf("failed to load MySQL config: %w", err)
 	}
-	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
+	mysqlDB, err = gorm.Open(mysql.Open(dsn), &gorm.Config{})
 	if err != nil {
 		return fmt.Errorf("failed to connect to database: %w", err)
 	}
-	err = db.AutoMigrate(&User{})
+	err = mysqlDB.AutoMigrate(&User{})
 	if err != nil {
 		return fmt.Errorf("failed to migrate database: %w", err)
 	}
