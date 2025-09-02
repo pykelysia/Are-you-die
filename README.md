@@ -18,7 +18,7 @@
 
 1. 克隆仓库：
    ```bash
-   git clone 
+   git clone https://github.com/pykelysia/Are-you-die.git
     ```
 2. 进入项目目录：
     ```bash
@@ -32,12 +32,12 @@
        "password": "your_password",
        "database_host": "localhost",
        "database_port": 3306,
-       "database_name": "are_you_die"
+       "database_name": "your_database"
      }
      ```
-   - 替换 `your_username` 和 `your_password` 为你的 MySQL 用户名和密码。
 4. 启动服务器：
     ```bash
+    go mod tidy
     go run main.go
     ```
 
