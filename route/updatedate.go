@@ -26,7 +26,7 @@ func Updatedate() gin.HandlerFunc {
 		}
 
 		// 更新用户的最新一次签到时间
-		err = database.UpdateCheckin(uint(id))
+		err = database.NewDate().UpdateCheckin(uint(id))
 		if err != nil {
 			ctx.JSON(500, gin.H{"error": "failed to update checkin date"})
 			return

@@ -19,7 +19,7 @@ func Open() error {
 	if err != nil {
 		return fmt.Errorf("failed to connect to database: %w", err)
 	}
-	err = mysqlDB.AutoMigrate(&User{})
+	err = mysqlDB.AutoMigrate(&User{}, &Date{})
 	if err != nil {
 		return fmt.Errorf("failed to migrate database: %w", err)
 	}
