@@ -1,4 +1,4 @@
-package route
+package api
 
 import (
 	"are-you-die/database"

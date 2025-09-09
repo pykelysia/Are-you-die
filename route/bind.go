@@ -1,12 +1,16 @@
 package route
 
-import "github.com/gin-gonic/gin"
+import (
+	"are-you-die/api"
+
+	"github.com/gin-gonic/gin"
+)
 
 func Bind(server *gin.Engine) {
 	groupuser := server.Group("/user")
 	{
-		groupuser.POST("/create", CreateUser())
-		groupuser.GET("/get/:name", GetUser())
-		groupuser.POST("/update/:name", Updatedate())
+		groupuser.POST("/create", api.CreateUser())
+		groupuser.GET("/get/:name", api.GetUser())
+		groupuser.POST("/update/:name", api.Updatedate())
 	}
 }
