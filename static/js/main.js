@@ -1,14 +1,21 @@
-document.getElementById('signInButton').addEventListener('click', function() {
+document.getElementById('signInButton').addEventListener('click', ClickButton);
+
+function CheckBoxInner() {
     const username = document.getElementById('username').value;
     const email = document.getElementById('email').value;
 
     if (!username || !email) {
-        alert('请输入用户名和邮箱！');
-        return;
+        return false; // 表单未填写完整
     }
+    return true; // 表单已填写完整
+}
 
-    const imageSection = document.getElementById('imageSection');
-    imageSection.innerHTML = '<img src="/static/IMG_3124.png" alt="签到成功">';
-
-    alert('签到成功！');
-});
+function ClickButton() {
+    if (CheckBoxInner()) {
+        const signInButton = document.getElementById('signInButton');
+        signInButton.classList.add('button-success'); // 添加成功样式类
+        signInButton.parentElement.classList.remove('button-section'); // 移除初始按钮样式类
+        signInButton.textContent = '签到成功';
+        signInButton.disabled = true; // 禁用按钮，防止重复点击
+    }
+}

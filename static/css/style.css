@@ -78,6 +78,19 @@ input:focus::placeholder {
     transform: scale(1.1); /* 鼠标悬停时放大 */
 }
 
+.button-success {
+    background-color: gray; /* 灰色背景 */
+    color: white; /* 白色文字 */
+    cursor: not-allowed; /* 禁用状态的鼠标样式 */
+    font-size: 24px; /* 保持字体大小 */
+    font-weight: bold; /* 加粗文字 */
+    border: none; /* 无边框 */
+    border-radius: 50%; /* 圆形按钮 */
+    width: 160px; /* 按钮宽度 */
+    height: 160px; /* 按钮高度 */
+    box-shadow: none; /* 移除阴影 */
+}
+
 .image-section img {
     max-width: 100%;
     border-radius: 10px;
